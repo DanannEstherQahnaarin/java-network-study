@@ -43,7 +43,7 @@ public class AirApp {
         System.out.println("====================");
 
         for(String key : portMap.keySet()){
-            System.out.println(key);
+            System.out.print(key + ",");
         }
         System.out.println("출발지를 입력하여 주십시오.");
         String inputDept = scanner.nextLine();
@@ -55,7 +55,7 @@ public class AirApp {
         System.out.println("====================");
 
         for(String key : portMap.keySet()){
-            System.out.println(key);
+            System.out.print(key + ",");
         }
 
         System.out.println("도착지를 입력하여 주십시오.");
