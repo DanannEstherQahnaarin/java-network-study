@@ -27,8 +27,10 @@ public class AirApp {
         String deptKey = "";
         String arrKey = "";
         String date = "";
-        String portsUrl = "https://apis.data.go.kr/1613000/DmstcFlightNvgInfoService/getArprtList?serviceKey=0bd6eafcaec213c796db7445926cc744555fe4e8d27f7a425b8cccd0e92877fc&_type=json";
-        String portJson = getJsonData(portsUrl);
+        String url = "";
+
+        url = "https://apis.data.go.kr/1613000/DmstcFlightNvgInfoService/getArprtList?serviceKey=0bd6eafcaec213c796db7445926cc744555fe4e8d27f7a425b8cccd0e92877fc&_type=json";
+        String portJson = getJsonData(url);
         PortInfo portInfo = new Gson().fromJson(portJson, PortInfo.class);
 
         HashMap<String,String> portMap = new HashMap<>();
@@ -67,13 +69,13 @@ public class AirApp {
         System.out.println("날짜를 입력하여 주십시오(YYYYMMDD).");
         date = scanner.nextLine();
 
-        String scheduleUrl = """
+        url = """
                 https://apis.data.go.kr/1613000/DmstcFlightNvgInfoService/getFlightOpratInfoList?serviceKey=0bd6eafcaec213c796db7445926cc744555fe4e8d27f7a425b8cccd0e92877fc&pageNo=1&numOfRows=10&_type=json&depAirportId=${arrKey}&arrAirportId=${deptKey}&depPlandTime=${date}
-                """.replace("${arrKey}", arrKey).replace("${deptKey}", deptKey).replace("${date}",date);
+              """.replace("${arrKey}", arrKey).replace("${deptKey}", deptKey).replace("${date}",date);
 
         //System.out.println(scheduleUrl);
 
-        String airInfoJson = getJsonData(scheduleUrl);
+        String airInfoJson = getJsonData(url);
 
         //System.out.println(airInfoJson);
 

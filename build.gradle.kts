@@ -16,6 +16,7 @@ dependencies {
     testImplementation("org.junit.jupiter:junit-jupiter")
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
     implementation("com.solapi:sdk:1.0.3")
+    implementation("org.json:json:20250517")
 }
 
 tasks.test {
