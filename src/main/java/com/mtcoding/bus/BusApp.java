@@ -75,6 +75,7 @@ public class BusApp {
         System.out.println(busNo);
 
         Bus.Response.Body.Items.Item busItem = null;
+
         for (int i = 0; i < busList.size(); i++) {
             if(busNo.equals(busList.get(i).getCarno1())){
                 busItem = busList.get(i);
